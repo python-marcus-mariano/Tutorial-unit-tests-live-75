@@ -15,6 +15,16 @@ from app.fila import Fila
 
 class TestFila(TestCase):
     """TestCase."""  
+    
+    @classmethod
+    def setUpClass(self):
+        """Fixture do classe - Método setupClass """
+        print('setUpClass')
+    
+    @classmethod
+    def tearDownClass(self):
+        """Fixture do classe - Método tearDownClass """
+        print('tearDownClass')
 
     def setUp(self):
         """Fixture do método - Método setup """
