@@ -17,28 +17,32 @@ class TestFila(TestCase):
     """TestCase."""  
     
     @classmethod
-    def setUpClass(self):
+    def setUpClass(cls):
         """Fixture do classe - Método setupClass """
         print('setUpClass')
+        cls.arquivo = 'arquivo.txt'
     
     @classmethod
-    def tearDownClass(self):
+    def tearDownClass(cls):
         """Fixture do classe - Método tearDownClass """
         print('tearDownClass')
+        from os import remove
+        # apagar o arquivo
+        remove(cls.arquivo)
 
     def setUp(self):
         """Fixture do método - Método setup """
-        self.fila = Fila()
         print('setup')
+        self.fila = Fila()
     
     def test_cria_arquivo(self):
         """Cirar arquivo"""
-        open('arquivo.txt', 'w')
         print('criar arquvivo')
+        open(self.arquivo, 'w')
         
 
     def tearDown(self):
-        """Fixture do método - Método tearDown """
+        """Fixture do método - Método tearDown """        
         print('tearDown')
 
     def test_quando_5_entrar_na_fila_5_deve_estar_no_final_da_fila(self):
