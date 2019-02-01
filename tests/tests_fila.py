@@ -30,6 +30,12 @@ class TestFila(TestCase):
         """Fixture do método - Método setup """
         self.fila = Fila()
         print('setup')
+    
+    def test_cria_arquivo(self):
+        """Cirar arquivo"""
+        open('arquivo.txt', 'w')
+        print('criar arquvivo')
+        
 
     def tearDown(self):
         """Fixture do método - Método tearDown """
